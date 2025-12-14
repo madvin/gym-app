@@ -5,9 +5,9 @@ export default function Hero() {
         <p className='text-blue-600 text-sm md:text-base font-light'>IT'S TIME TO</p>
         <h1 className='uppercase font-semibold text-5xl sm:text-6xl md:text-7xl'>stand <span className='text-blue-500'>UP</span> and <span className='text-blue-500'>train hard</span></h1>
          </div>
-        <p>YOUR WORKOUT</p>
+        <p className='text-sm md:text-base font-light'>YOUR WORKOUT</p>
         <button className='px-8 py-4 rounded-medium'>
-            <p>Accept</p>
+            <p className='text-blue-600'>Accept</p>
         </button>
     </div>
   );
