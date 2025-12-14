@@ -8,11 +8,13 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <main className='min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-slate-800 to-slate-1000 text-white text-sm sm:text-base'>
+    <>
+     <main className='min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-1000 text-white text-sm sm:text-base'>
       <Hero />
       <Generator />
       <Workout />
     </main>
+    </>
   )
 }
 
