@@ -9,3 +9,8 @@
 * {
     font-family: 'Bebas', sans-serif;
 }
+
+span {
+    font-family: inherit;
+    font-weight: inherit;
+}
