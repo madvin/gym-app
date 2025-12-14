@@ -1,7 +1,9 @@
+import SectionWrapper from './SectionWrapper';
+
 export default function Generator() {
   return (
-    <>
-        <div className=''> Generator</div>
-    </>
+        <SectionWrapper>
+           <p> Something here to render as children </p>
+        </SectionWrapper>
   );
 }
