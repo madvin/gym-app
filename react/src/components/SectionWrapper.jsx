@@ -8,7 +8,9 @@ export default function SectionWrapper(props) {
             <p className='uppercase font-medium'>{header}</p>
             <h2 className='font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl'>{title[0]} <span className='uppercase text-blue-400'>{title[1]}</span> {title[2]}</h2>
         </div>
+        <div className='max-w-[800px] w-full mx-auto flex flex-col gap-10'>
         {children}
+        </div>
     </section>
   );
 }
