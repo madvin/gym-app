@@ -1,5 +1,7 @@
 import SectionWrapper from './SectionWrapper';
 
+import { WORKOUTS } from '../utils/exercises';
+
 function Header(props) {
 
   const { index, title, description } = props;
@@ -23,6 +25,13 @@ export default function Generator() {
             title={'Choose your focus areas'}
             description={'Select the muscle groups or workout types you want to target during your session.'}
            />
+           {Object.keys(WORKOUTS).map((type,typeIndex) => {
+            return (
+              <button key={typeIndex}>
+              <p>{type}</p>
+              </button>
+            )
+           })}
         </SectionWrapper>
   );
 }
