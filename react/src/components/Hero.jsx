@@ -9,9 +9,6 @@ export default function Hero() {
         <button className='px-8 py-4 rounded-medium'>
             <p className='text-blue-600'>Accept</p>
         </button>
-        <button>
-            <p className='text-blue-600'>Decline</p>
-        </button>
     </div>
   );
 }
