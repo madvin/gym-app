@@ -25,13 +25,17 @@ export default function Generator() {
             title={'Choose your focus areas'}
             description={'Select the muscle groups or workout types you want to target during your session.'}
            />
-           {Object.keys(WORKOUTS).map((type,typeIndex) => {
+
+           <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
+              {Object.keys(WORKOUTS).map((type,typeIndex) => {
             return (
-              <button key={typeIndex}>
+              <button className='bg-slate-950 border border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg' key={typeIndex}>
               <p>{type}</p>
               </button>
             )
            })}
+           </div>
+         
         </SectionWrapper>
   );
 }
