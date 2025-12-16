@@ -1774,11 +1774,3 @@ export const EXERCISES = {
     }
 }
 
-
-
-
-// module.exports = { tempos, workouts, exercises, schemes }
-//info page
-//tempos
-//rep ranges
-//warmup
