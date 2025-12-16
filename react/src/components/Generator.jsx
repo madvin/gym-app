@@ -23,7 +23,7 @@ export default function Generator() {
            <Header 
             index={'01.'} 
             title={'Choose your focus areas'}
-            description={'Select the muscle groups or workout types you want to target during your session.'}
+            description={'Select the workout for the session.'}
            />
 
            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
@@ -35,7 +35,18 @@ export default function Generator() {
             )
            })}
            </div>
-         
+            <Header 
+            index={'02.'} 
+            title={'Lock on targets'}
+            description={'Select the muscle groups or workout types you want to target during your session.'}
+           />
+
+           <div className='bg-slate-900 py-3 border border-solid border-blue-500 rounded-lg p-4'>
+              <div className='relative flex items-center justify-between gap'>
+                <p>Select Muscle groups</p>
+                <i className="fa-solid fa-caret-down"></i>
+              </div>
+           </div>         
         </SectionWrapper>
   );
 }
