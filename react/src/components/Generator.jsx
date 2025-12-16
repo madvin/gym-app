@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import SectionWrapper from './SectionWrapper';
 import { WORKOUTS } from '../utils/exercises';
+import { SCHEMES } from '../utils/exercises';
 
 function Header(props) {
 
@@ -21,6 +22,9 @@ function Header(props) {
 export default function Generator() {
 
   const [showModal, setShowModal] = useState(false);
+  const [poison, setPoison] = useState('individual');
+  const [muscles, setMuscles] = useState([]);
+  const [goals, setGoals] = useState('strength_power');
 
   function toggleModal() {
     setShowModal(!showModal);
@@ -43,6 +47,7 @@ export default function Generator() {
             )
            })}
            </div>
+
             <Header 
             index={'02.'} 
             title={'Lock on targets'}
@@ -57,7 +62,23 @@ export default function Generator() {
               {showModal && (
                 <div>modal</div>
                 )}
-           </div>         
+           </div>
+
+            <Header 
+            index={'01.'} 
+            title={'Choose your focus areas'}
+            description={'Select the workout for the session.'}
+           />
+
+           <div className='grid grid-cols-3 gap-4'>
+              {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
+            return (
+              <button className='bg-slate-950 border border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg' key={schemeIndex}>
+              <p className='capitalize'>{scheme.replaceAll('_', ' ')}</p>
+              </button>
+            )
+           })}
+           </div>
         </SectionWrapper>
   );
 }
