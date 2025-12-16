@@ -1,5 +1,6 @@
-import SectionWrapper from './SectionWrapper';
+import { useState } from 'react';
 
+import SectionWrapper from './SectionWrapper';
 import { WORKOUTS } from '../utils/exercises';
 
 function Header(props) {
@@ -19,7 +20,11 @@ function Header(props) {
 
 export default function Generator() {
 
-  let showModal = true;
+  const [showModal, setShowModal] = useState(false);
+
+  function toggleModal() {
+    setShowModal(!showModal);
+  }
 
   return (
         <SectionWrapper header={'generate your workout'} title={[ 'It\'s', 'Huge', 'o\'clock']}>
@@ -44,8 +49,8 @@ export default function Generator() {
             description={'Select the muscle groups or workout types you want to target during your session.'}
            />
 
-           <div className='bg-slate-900 py-3 border border-solid border-blue-500 rounded-lg p-4'>
-              <button className='relative p-3 flex items-center justify-between'>
+           <div className='bg-slate-900 py-3 border border-solid border-blue-500 rounded-lg p-4 flex flex-col gap-4'>
+              <button onClick ={toggleModal} className='relative p-3 flex items-center justify-between'>
                 <p>Select Muscle groups</p>
                 <i className="fa-solid fa-caret-down"></i>
               </button>
