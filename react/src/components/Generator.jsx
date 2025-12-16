@@ -65,9 +65,9 @@ export default function Generator() {
            </div>
 
             <Header 
-            index={'01.'} 
-            title={'Choose your focus areas'}
-            description={'Select the workout for the session.'}
+            index={'03.'} 
+            title={'Choose your target goal'}
+            description={'Select the primary goal for your workout session.'}
            />
 
            <div className='grid grid-cols-3 gap-4'>
