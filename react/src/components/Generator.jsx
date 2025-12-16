@@ -18,6 +18,9 @@ function Header(props) {
 }
 
 export default function Generator() {
+
+  let showModal = true;
+
   return (
         <SectionWrapper header={'generate your workout'} title={[ 'It\'s', 'Huge', 'o\'clock']}>
            <Header 
@@ -42,10 +45,13 @@ export default function Generator() {
            />
 
            <div className='bg-slate-900 py-3 border border-solid border-blue-500 rounded-lg p-4'>
-              <div className='relative flex items-center justify-between gap'>
+              <button className='relative p-3 flex items-center justify-between'>
                 <p>Select Muscle groups</p>
                 <i className="fa-solid fa-caret-down"></i>
-              </div>
+              </button>
+              {showModal && (
+                <div>modal</div>
+                )}
            </div>         
         </SectionWrapper>
   );
