@@ -24,14 +24,14 @@ export default function Generator() {
   const [showModal, setShowModal] = useState(false);
   const [poison, setPoison] = useState('individual');
   const [muscles, setMuscles] = useState([]);
-  const [goals, setGoals] = useState('strength_power');
+  const [goal, setGoal] = useState('strength_power');
 
   function toggleModal() {
     setShowModal(!showModal);
   }
 
   return (
-        <SectionWrapper header={'generate your workout'} title={[ 'It\'s', 'Huge', 'o\'clock']}>
+        <SectionWrapper header={'Generate your workout'} title={[ 'It\'s', 'Huge', 'o\'clock']}>
            <Header 
             index={'01.'} 
             title={'Choose your focus areas'}
@@ -43,7 +43,7 @@ export default function Generator() {
             return (
               <button onClick={() => {
                 setPoison(type)
-              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (type === poison ? 'border-blue-800' : 'border-blue-300')} key={typeIndex}>
+              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (type === poison ? 'border-red-800' : 'border-blue-300')} key={typeIndex}>
               <p className='capitalize'>{type.replaceAll('_', ' ')}</p>
               </button>
             )
@@ -62,7 +62,15 @@ export default function Generator() {
                 <i className="fa-solid fa-caret-down"></i>
               </button>
               {showModal && (
-                <div>modal</div>
+                <div className='flex flex-col px-3 pb-3'>
+                {(poison === 'individual' ? WORKOUTS[poison] : Object.keys(WORKOUTS[poison])).map((muscleGroup, muscleGroupIndex) => {
+                  return (
+                    <button key={muscleGroupIndex} className='hover color-blue-500 duration-200'>
+                      <p className='uppercase'>{muscleGroup.replaceAll('_', ' ')}</p>
+                    </button>
+                  )
+                })}
+                </div>
                 )}
            </div>
 
@@ -76,8 +84,8 @@ export default function Generator() {
               {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
             return (
             <button onClick={() => {
-                setPoison(scheme)
-              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (scheme === poison ? 'border-blue-800' : 'border-blue-300')} key={schemeIndex}>
+                setGoal(scheme)
+              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (scheme === goal ? 'border-red-800' : 'border-blue-300')} key={schemeIndex}>
               <p className='capitalize'>{scheme.replaceAll('_', ' ')}</p>
               </button>
             )
