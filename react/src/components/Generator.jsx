@@ -41,7 +41,9 @@ export default function Generator() {
            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4'>
               {Object.keys(WORKOUTS).map((type,typeIndex) => {
             return (
-              <button className='bg-slate-950 border border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg' key={typeIndex}>
+              <button onClick={() => {
+                setPoison(type)
+              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (type === poison ? 'border-blue-800' : 'border-blue-300')} key={typeIndex}>
               <p className='capitalize'>{type.replaceAll('_', ' ')}</p>
               </button>
             )
