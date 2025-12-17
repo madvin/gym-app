@@ -75,7 +75,9 @@ export default function Generator() {
            <div className='grid grid-cols-3 gap-4'>
               {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
             return (
-              <button className='bg-slate-950 border border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg' key={schemeIndex}>
+            <button onClick={() => {
+                setPoison(scheme)
+              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (scheme === poison ? 'border-blue-800' : 'border-blue-300')} key={schemeIndex}>
               <p className='capitalize'>{scheme.replaceAll('_', ' ')}</p>
               </button>
             )
