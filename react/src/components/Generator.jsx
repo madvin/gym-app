@@ -40,6 +40,7 @@ export default function Generator() {
     }
     if (poison !== 'individual') {
       setMuscles([muscleGroup])
+      setShowModal(false);
       return
     }
     
