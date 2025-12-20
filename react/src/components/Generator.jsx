@@ -65,7 +65,7 @@ export default function Generator() {
               <button onClick={() => {
                 setMuscles([]);
                 setPoison(type)
-              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (type === poison ? 'border-red-800' : 'border-blue-300')} key={typeIndex}>
+              }} className={'bg-slate-950 border-2 border-blue-500 px-4 hover:bg-slate-700 text-white p-4 rounded-lg ' + (type === poison ? 'border-red-800' : 'border-blue-300')} key={typeIndex}>
               <p className='capitalize'>{type.replaceAll('_', ' ')}</p>
               </button>
             )
@@ -89,7 +89,7 @@ export default function Generator() {
                   return (
                     <button onClick={() => {
                       updateMuscles(muscleGroup);
-                    }} key={muscleGroupIndex} className={'hover:text-blue-500 duration-200 ' + (muscles.includes(muscleGroup) ? 'text-red-500' : ' ')}>
+                    }} key={muscleGroupIndex} className={'hover:text-blue-500 duration-200 px-4 ' + (muscles.includes(muscleGroup) ? 'text-red-500' : ' ')}>
                       <p className='uppercase'>{muscleGroup.replaceAll('_', ' ')}</p>
                     </button>
                   )
@@ -109,7 +109,7 @@ export default function Generator() {
             return (
             <button onClick={() => {
                 setGoal(scheme)
-              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (scheme === goal ? 'border-red-800' : 'border-blue-300')} key={schemeIndex}>
+              }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg px-4 ' + (scheme === goal ? 'border-red-800' : 'border-blue-300')} key={schemeIndex}>
               <p className='capitalize'>{scheme.replaceAll('_', ' ')}</p>
               </button>
             )
