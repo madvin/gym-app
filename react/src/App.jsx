@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Hero from './components/Hero'
 import Generator from './components/Generator'
 import Workout from './components/Workout'
+import { generateWorkout } from './utils/functions'
 
 function App() {
   const [workout, setWorkout] = useState(null);
@@ -10,6 +11,13 @@ function App() {
   const [muscles, setMuscles] = useState([]);
   const [goal, setGoal] = useState('strength_power');
 
+  function updateWorkout() {
+    if (muscles.length === 0) {
+      return;
+    }
+    let newWorkout = generateWorkout(poison, muscles, goal);
+    setWorkout(newWorkout);
+  }
 
   return (
     <>
@@ -22,7 +30,7 @@ function App() {
         setMuscles={setMuscles} 
         goal={goal} 
         setGoal={setGoal}
-        setWorkout={setWorkout}
+        updateWorkout={updateWorkout}
       />
       {workout && (<Workout workout={workout} />)}
     </main>

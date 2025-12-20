@@ -21,7 +21,7 @@ function Header(props) {
 }
 
 export default function Generator(props) {
-  const { poison, setPoison, muscles, setMuscles, goal, setGoal, setWorkout } = props;
+  const { poison, setPoison, muscles, setMuscles, goal, setGoal, setWorkout, updateWorkout } = props;
 
   const [showModal, setShowModal] = useState(false);
  
@@ -113,7 +113,7 @@ export default function Generator(props) {
             )
            })}
            </div>
-           <Button text={'Formulate'}></Button>
+           <Button func={updateWorkout} text={'Formulate'}></Button>
         </SectionWrapper>
   );
 }
