@@ -77,7 +77,7 @@ export default function Generator() {
 
            <div className='bg-slate-900 py-2 border border-solid border-blue-500 rounded-lg p-4 flex flex-col gap-2'>
               <button onClick ={toggleModal} className='relative p-2 flex items-center justify-between'>
-                <p>Select Muscle groups</p>
+                <p className='capitalize'>{muscles.length === 0 ? 'Select Muscle groups' : muscles.join(', ')}</p>
                 <i className="fa-solid absolute right-3 top-1/2 translate-y-1/2 fa-caret-down"></i>
               </button>
               {showModal && (
