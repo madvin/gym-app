@@ -44,10 +44,11 @@ export default function Generator() {
       return
     }
     
-    setMuscles([...muscles, muscleGroup]);
-
+    setMuscles([...muscles, muscleGroup])
+    if (muscles.length === 3) {
+      setShowModal(false);
+    }
   }
-
   return (
         <SectionWrapper header={'Generate your workout'} title={[ 'It\'s', 'Huge', 'o\'clock']}>
            <Header 
