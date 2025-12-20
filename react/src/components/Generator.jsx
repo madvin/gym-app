@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Button from './Button';
 import SectionWrapper from './SectionWrapper';
 import { WORKOUTS } from '../utils/exercises';
 import { SCHEMES } from '../utils/exercises';
@@ -114,6 +115,7 @@ export default function Generator() {
             )
            })}
            </div>
+           <Button text={'Formulate'}></Button>
         </SectionWrapper>
   );
 }
