@@ -45,8 +45,9 @@ export default function Generator() {
     }
     
     setMuscles([...muscles, muscleGroup])
-    if (muscles.length === 3) {
+    if (muscles.length >= 2) {
       setShowModal(false);
+      return;
     }
   }
   return (
@@ -61,6 +62,7 @@ export default function Generator() {
               {Object.keys(WORKOUTS).map((type,typeIndex) => {
             return (
               <button onClick={() => {
+                setMuscles([]);
                 setPoison(type)
               }} className={'bg-slate-950 border-2 border-blue-500 hover:bg-slate-700 text-white p-4 rounded-lg ' + (type === poison ? 'border-red-800' : 'border-blue-300')} key={typeIndex}>
               <p className='capitalize'>{type.replaceAll('_', ' ')}</p>
@@ -77,7 +79,7 @@ export default function Generator() {
 
            <div className='bg-slate-900 py-2 border border-solid border-blue-500 rounded-lg p-4 flex flex-col gap-2'>
               <button onClick ={toggleModal} className='relative p-2 flex items-center justify-between'>
-                <p className='capitalize'>{muscles.length === 0 ? 'Select Muscle groups' : muscles.join(', ')}</p>
+                <p className='capitalize text-blue-500'>{muscles.length === 0 ? 'Select Muscle groups' : muscles.join(', ')}</p>
                 <i className="fa-solid absolute right-3 top-1/2 translate-y-1/2 fa-caret-down"></i>
               </button>
               {showModal && (
