@@ -102,7 +102,7 @@ export default function Generator(props) {
             description={'Select the primary goal for your workout session.'}
            />
 
-           <div className='grid grid-cols-3 gap-4'>
+           <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
               {Object.keys(SCHEMES).map((scheme, schemeIndex) => {
             return (
             <button onClick={() => {

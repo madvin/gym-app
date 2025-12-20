@@ -15,25 +15,25 @@ function App() {
     if (muscles.length === 0) {
       return;
     }
-    let newWorkout = generateWorkout(poison, muscles, goal);
+    let newWorkout = generateWorkout({ poison, muscles, goal });
     setWorkout(newWorkout);
   }
 
   return (
     <>
-     <main className='min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-1000 text-white text-sm sm:text-base'>
-      <Hero />
-      <Generator 
-        poison={poison} 
-        setPoison={setPoison} 
-        muscles={muscles} 
-        setMuscles={setMuscles} 
-        goal={goal} 
-        setGoal={setGoal}
-        updateWorkout={updateWorkout}
-      />
-      {workout && (<Workout workout={workout} />)}
-    </main>
+      <main className='min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-1000 text-white text-sm sm:text-base'>
+        <Hero />
+        <Generator
+          poison={poison}
+          setPoison={setPoison}
+          muscles={muscles}
+          setMuscles={setMuscles}
+          goal={goal}
+          setGoal={setGoal}
+          updateWorkout={updateWorkout}
+        />
+        {workout && (<Workout workout={workout} />)}
+      </main>
     </>
   )
 }
