@@ -8,9 +8,9 @@ export default function Hero() {
         <h1 className='uppercase font-semibold text-5xl sm:text-6xl md:text-7xl'>stand <span className='text-blue-500'>UP</span> and <span className='text-blue-500'>train hard</span></h1>
          </div>
         <p className='text-sm md:text-base font-light'>YOUR WORKOUT</p>
-        <Button func={() => {
-          window.location.href = '#generate';
-        }} text={'Accept & Begin'}></Button>
+         <Button func={() => {
+                window.location.href = '#generate'
+            }} text={"Accept & Begin"}></Button>
     </div>
   );
 }

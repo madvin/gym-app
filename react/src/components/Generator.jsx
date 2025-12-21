@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import Button from './Button';
 import SectionWrapper from './SectionWrapper';
-import { WORKOUTS } from '../utils/exercises';
-import { SCHEMES } from '../utils/exercises';
+import { WORKOUTS, SCHEMES  } from '../utils/exercises';
 
 function Header(props) {
 
