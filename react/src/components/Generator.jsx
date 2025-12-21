@@ -50,7 +50,7 @@ export default function Generator(props) {
     }
   }
   return (
-        <SectionWrapper header={'Generate your workout'} title={[ 'It\'s', 'Huge', 'o\'clock']}>
+        <SectionWrapper id={'generate'} header={'Generate your workout'} title={[ 'It\'s', 'Huge', 'o\'clock']}>
            <Header 
             index={'01.'} 
             title={'Choose your focus areas'}
@@ -117,5 +117,3 @@ export default function Generator(props) {
         </SectionWrapper>
   );
 }
-
-//!! TODO APP

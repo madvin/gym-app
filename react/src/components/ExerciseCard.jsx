@@ -6,7 +6,6 @@ export default function ExerciseCard(props) {
 
   function handleSetIncrement() {
     setSetsCompleted((setsCompleted + 1) % 6)
-    console.log(setsCompleted);
   }
   
   return (
