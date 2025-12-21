@@ -9,7 +9,10 @@ export default function Hero() {
          </div>
         <p className='text-sm md:text-base font-light'>YOUR WORKOUT</p>
          <Button func={() => {
-                window.location.href = '#generate'
+                const element = document.getElementById('generate');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
             }} text={"Accept & Begin"}></Button>
     </div>
   );
